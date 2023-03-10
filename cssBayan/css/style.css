@@ -7,11 +7,31 @@ body{
   display: flex;
   flex-direction: column;
   font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
+  font-size: 1em;
 }
 
 main{
   flex-grow: 1;
+  padding: 100px 0;
+}
+
+.header,
+.footer{
+  background-color: #4f89e0;
+  padding: 50px;
+  display: flex;
+}
+.header__link,
+.footer__link{
+  color: #fff;
+  font-weight: 500;
+}
+.footer__link{
+  display: flex;
+  align-items: center;
+}
+.footer__link img{
+  margin-right: 1em;
 }
 
 .container {
@@ -21,9 +41,10 @@ main{
 }
 
 .title{
+  text-align: center;
   padding: 10px 0;
-  border-bottom: 1px solid #cecece;
   margin-bottom: 20px;
+  font-weight: 900;
 }
 
 .accordion__list{
@@ -40,7 +61,9 @@ main{
   align-items: center;
   padding: 1em;
   border-bottom: 1px solid #cecece;
-  font-weight: 500;
+  font-weight: 700;
+  transition: all 0.3s;
+  color: #4f89e0;
 }
 
 .arrow{
@@ -63,10 +86,12 @@ input {
 
 input:hover ~ .accordion__content,
 input:checked ~ .accordion__content{
-  padding: 1em;
+  padding-top: 1em;
   max-height: 100vh;
 }
-
-input:checked > .accordion__title > .arrow{
+input:checked > .accordion__title-arrow{
   transform: rotate(90deg);
+}
+input:checked + .accordion__title{
+  color: black;
 }
